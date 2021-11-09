@@ -221,12 +221,13 @@ h1{
 
 .msg__box::before{
     content: "Result:";
-    margin-bottom: 8px;font-size: 4rem;
+    margin-bottom: 8px;
+    font-size: 4rem;
 }
 
 .msg__box{
     position: absolute;
-    left: 40%;
+    left: 35%;
     display: none;
     justify-content: center;
     align-items: center;
