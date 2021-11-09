@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="phone.css"> -->
+</head>
+
+<body>
+    <div class="main__box">
+        <h1 class="text">
+            <p>Let's play</p>
+            <p>the Tic-Tac-Toe</p>
+            <p>Game !</p>
+        </h1>
+        <div id="startGame" class="show">
+            Start Game
+        </div>
+    </div>
+    <div class="name__box" id="name__boxElement">
+        Player 1 wants ?
+        <div>
+            <button id="x">X</button>
+            <button id="o">O</button>
+        </div>
+    </div>
+    <div id="gameBoxID" class="gameBox">
+        <span class="name">
+            <div id="playerOne">Player 1</div>
+            <div id="playerTwo">Player 2</div>
+        </span>
+        
+
+        <div class="card">
+            <div class="box" data-box></div>
+            <div class="box" data-box></div>
+            <div class="box" data-box></div>
+            <div class="box" data-box></div>
+            <div class="box" data-box></div>
+            <div class="box" data-box></div>
+            <div class="box" data-box></div>
+            <div class="box" data-box></div>
+            <div class="box" data-box></div>
+        </div>
+
+    </div>
+    <div class="msg__box" id="msg__element">
+        <div data-msg></div>
+        <button id="restartBtn">Restart</button>
+
+    </div>
+    <script src="app.js"></script>
+
+</body>
+
+</html> 

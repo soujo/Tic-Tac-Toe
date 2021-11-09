@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Source Serif Pro', serif;
+}
+
+h1{
+    font-size: 2.5rem;
+    margin-left: 8rem;
+    position: relative;
+    bottom: 5rem;
+    color: rgb(62, 122, 235);
+}
+.name__box{
+    margin-right: 550px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 12rem;
+    width: 16rem;
+    background-color: #00bbf9;
+    color: #000814;
+    border-radius: 6px;
+}
+.name__box.show{
+    display: flex;
+}
+.name__box button{
+    margin-right: 1.6rem;
+    margin-left: 1.6rem;
+    margin-top: 2rem;
+    width: 2.5rem;
+    height: 2rem;
+    border-radius: 5px;
+    outline: none;    
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #ffd60a;
+}
+#startGame{
+    margin-left: 8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    bottom: 1.2rem;
+    height: 2rem;
+    width: 6em;
+    border-radius: 1rem;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    color: cornflowerblue;
+    border: 2px solid cornflowerblue;
+}
+#startGame:hover{
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+    font-weight: 570;
+}
+
+.name{
+    display: inline-flex;
+   margin-bottom: 2rem;
+   margin-left: 3rem;
+   font-size: 1.2rem;
+   padding: 0.7rem;
+}
+
+#playerTwo{
+    margin-left: 4.9rem;
+    padding: 0.5rem;
+    border-bottom: 4px solid cornflowerblue;
+}
+
+#playerOne{
+    padding: 0.5rem;
+    border-bottom: 4px solid cornflowerblue;
+
+}
+
+.card{
+    margin-right: 8rem;
+    width: 360px;
+    height: 360px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3,120px);
+}
+.box{
+    width: 120px;
+    height: 120px; 
+    border: 5px solid #7400b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;    
+}
+
+/* Removing top border of first row */
+
+.box:first-child,
+.box:nth-child(2),
+.box:nth-child(3){
+    border-top: none;
+}
+
+/* Removing left border of first column */
+.box:nth-child(3n+1){
+    border-left: none;
+}
+
+/* Removing right border of last column */
+.box:nth-child(3n+3){
+    border-right: none;
+}
+
+/* Removing bottom border of last row */
+.box:last-child,
+.box:nth-child(7),
+.box:nth-child(8){
+    border-bottom: none;
+}
+
+
+/* hover  */
+.card.cross .box:not(.cross):not(.circle):hover::before,
+.card.cross .box:not(.cross):not(.circle):hover::after,
+.card.circle .box:not(.cross):not(.circle):hover::before
+{
+    background-color: #afffe8;
+}
+
+.box.cross::before,
+.box.cross::after,
+.box.circle::before{
+    background-color: #64dfdf;
+}
+
+/* Not allowed */
+.box.cross,
+.box.circle{
+    cursor: not-allowed;
+}
+
+
+/* cross  */
+.box.cross::before,
+.box.cross::after,
+.card.cross .box:not(.cross):not(.circle):hover:before,
+.card.cross .box:not(.cross):not(.circle):hover::after{
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 10px;
+}
+
+.box.cross::before,
+.card.cross .box:not(.circle):not(.cross):hover::before
+{
+    transform: rotate(45deg);
+}
+
+.box.cross::after,
+.card.cross .box:not(.circle):not(.cross):hover::after
+{
+    transform: rotate(-45deg);
+}
+
+
+
+/* circle  */
+
+.box.circle::before,
+.box.circle::after,
+.card.circle .box:not(.cross):not(.circle):hover::before,
+.card.circle .box:not(.cross):not(.circle):hover::after
+{
+    content: "";    
+    position: absolute;
+    border-radius: 50%;
+}
+
+.box.circle::before,
+.card.circle .box:not(.circle):not(.cross):hover::before
+{
+    height: 90px;
+    width: 90px;
+}
+
+.box.circle::after,
+.card.circle .box:not(.circle):not(.cross):hover::after
+{
+    height: 70px;
+    width: 70px;
+    background-color: white;
+
+}
+
+/* Restart box  */
+
+.msg__box::before{
+    content: "Result:";
+    margin-bottom: 8px;font-size: 4rem;
+}
+
+.msg__box{
+    position: absolute;
+    left: 40%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f4d35e;
+    color: #092d4e;
+    font-size: 3rem;
+    padding: 3rem; 
+    border-radius: 1rem;
+}
+
+.msg__box button{
+    background-color: #ee964b;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 7px;
+    margin-top: 25px;
+    border: none;
+    color: #0d3b66;
+    border: 2px solid #696969;
+}
+
+.msg__box button:hover{
+    background-color: #0d3b66;
+    color: #ee964b;
+    border: 2px solid #ee964b;
+}
+
+.show{
+    display: flex;
+}
+
+.showGameBox{
+    display: block;
+}
+
+.gameBox,
+.off{
+    display: none;
+}
+
